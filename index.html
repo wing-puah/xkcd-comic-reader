@@ -6,30 +6,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XKCD</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
 </head>
 
 <body>
     <nav>XKCD Comic</nav>
     <div>
-        <form id="page">
-            <input type="number" name="page-number" />
-            <button type="submit">Go</button>
-        </form>
+        <div class="snackbar d-none"></div>
+
+        <div class="d-flex justify-center">
+            <form id="page">
+                <label for="pageNum">Jump to comic</label>
+                <input type="number" name="pageNum" placeholder="Input comic number..." />
+                <button type="submit" class="button">Go</button>
+                <div class="error display-none"></div>
+            </form>
+        </div>
+        <hr />
 
         <div>
-            <div>
-                <button id="prev" class="comic__button">&lt; Prev</button>
-                <button id="random" class="comic__button">Random</button>
-                <button id="next" class="comic__button">Next &gt;</button>
+            <div class="buttons d-flex justify-center mt-2">
+                <button class="prev comic__button button filled">&lt; Prev</button>
+                <button class="random comic__button button">Random</button>
+                <button class="next comic__button button filled">Next &gt;</button>
             </div>
 
-            <div id="comic"></div>
+            <div class="lds-spinner___container d-none">
+                <div class="lds-spinner">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
 
-            <select id="count">
-                <option value="1">1</option>
-                <option value="3">3</option>
-                <option value="5">5</option>
-            </select>
+            <div id="comic" class="d-flex justify-space-between"></div>
+
+            <div class="buttons buttons__footer d-flex justify-center">
+                <button class="prev comic__button button filled">&lt; Prev</button>
+                <button class="random comic__button button">Random</button>
+                <button class="next comic__button button filled">Next &gt;</button>
+            </div>
+
+            <div class="d-flex justify-end dropdown">
+
+                <label for="count">Comics per page</label>
+                <select id="count">
+                    <option value="1">1</option>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                </select>
+
+            </div>
 
         </div>
     </div>

@@ -1,0 +1,249 @@
+:root {
+  --primary-main: #3c887e;
+  --primary-dark: #455e5d;
+  --danger-main: #fe5f55;
+  --white: white;
+  --border-radius: 4px;
+  --grey: #ccc;
+  --main: #555;
+  --nav: #646165;
+}
+
+hr {
+  opacity: 0.5;
+  background: var(--grey);
+  margin: 0 30px 10px;
+}
+
+nav {
+  background-color: var(--nav);
+  color: white;
+  padding: 10px 20px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+}
+
+.mt-2 {
+  margin-top: 20px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-flex img {
+  box-sizing: border-box;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.snackbar {
+  transition: all 0.2s;
+  background-color: var(--danger-main);
+  color: white;
+  min-width: 200px;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+}
+
+.buttons .comic__button {
+  padding: 8px 20px;
+  margin: 10px;
+  min-width: 150px;
+}
+
+.button {
+  border-radius: var(--border-radius);
+  color: var(--primary-main);
+  border: 1px solid var(--primary-main);
+  cursor: pointer;
+  background: var(--white);
+  transition: all 0.4s;
+}
+
+.button:hover {
+  background: #ddd;
+}
+
+.button.filled {
+  background: var(--primary-main);
+  color: var(--white);
+}
+
+.button.filled:hover {
+  background: var(--primary-dark);
+}
+
+.button:disabled,
+.button.filled:disabled {
+  cursor: not-allowed;
+  background: var(--grey);
+  color: var(--white);
+  border: 1px solid var(--main);
+}
+
+.button:disabled:hover,
+.button.filled:disabled:hover {
+  cursor: not-allowed;
+  background: #ddd;
+  color: var(--white);
+  border: 1px solid var(--main);
+}
+
+.dropdown {
+  margin: 20px;
+}
+
+.dropdown label {
+  padding-right: 10px;
+}
+
+.dropdown select {
+  width: 100px;
+  height: 20px;
+}
+
+form#page {
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#comic {
+  margin: 0 30px;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+}
+
+#comic img {
+  max-width: fit-content;
+}
+
+.comic__container {
+  margin: 10px;
+  border: 1px solid var(--primary-dark);
+  padding: 10px;
+}
+
+.lds-spinner___container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lds-spinner {
+  color: var(--primary-main);
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: var(--primary-main);
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
