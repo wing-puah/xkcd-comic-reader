@@ -13,9 +13,30 @@
     <div>
         <form id="page">
             <input type="number" name="page-number" />
+            <button type="submit">Go</button>
         </form>
+
+        <div>
+            <div>
+                <button id="prev" class="comic__button">&lt; Prev</button>
+                <button id="random" class="comic__button">Random</button>
+                <button id="next" class="comic__button">Next &gt;</button>
+            </div>
+
+            <div id="comic"></div>
+
+            <select id="count">
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="5">5</option>
+            </select>
+
+        </div>
     </div>
 </body>
 
+<script src="js/pageController.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/comicReader.js"></script>
 
 </html>
