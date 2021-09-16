@@ -10,7 +10,6 @@ const pageController = (function () {
 
   let timerId;
   function showError(errorMessage) {
-    console.log('showing');
     clearTimeout(timerId);
     const snackbar = document.querySelector('.snackbar');
     snackbar.innerText = errorMessage;
@@ -21,7 +20,6 @@ const pageController = (function () {
     }, 3000);
   }
   function hideError() {
-    console.log('hiding');
     const snackbar = document.querySelector('.snackbar');
     snackbar.classList.replace('d-block', 'd-none');
   }
