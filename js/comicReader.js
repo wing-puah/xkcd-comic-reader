@@ -136,7 +136,7 @@ function initControlQueryAndPopulate(initialQuery) {
     pageController.showLoadingIndicator();
 
     try {
-      const comic = await fetchAndPopulateComic(query);
+      const comic = await fetchComic(query);
 
       if (!comic) {
         handleEmptyComic();
@@ -183,7 +183,7 @@ function initControlQueryAndPopulate(initialQuery) {
     });
   }
 
-  function fetchAndPopulateComic({ start, perPage }) {
+  function fetchComic({ start, perPage }) {
     const url = `https://intro-to-js-playground.vercel.app/api/xkcd-comics`;
     const allPromises = Array.from({ length: perPage }, (v, i) => {
       return fetch(`${url}/${Number(start) + i}`);
@@ -199,10 +199,7 @@ function initControlQueryAndPopulate(initialQuery) {
     for (i; i < numberOfComics; i++) {
       const currentComic = comics[i];
 
-      if (
-        currentComic?.status === 'fulfilled' &&
-        currentComic?.value?.status === 200
-      ) {
+      if (currentComic?.status === 'fulfilled' && currentComic?.value?.status === 200) {
         const data = await currentComic.value.json();
         populateSingleComicEl(data, i, comicContainer);
         continue;
