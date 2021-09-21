@@ -6,7 +6,13 @@ const defaultSettings = {
 const createFetchQuery = function () {
   const query = utils.getUrlQuery();
   const start = Number(query.start);
-  const perPage = Number(query.perPage);
+  const perPage = parsePerPage(Number(query.perPage));
+
+  function parsePerPage(page) {
+    const invalidPageNumber =
+      !page || !Number.isInteger(page) || (Number.isInteger(page) && page > 5);
+    return invalidPageNumber ? defaultSettings.perPage : Number(page);
+  }
 
   function getDefault() {
     return {
