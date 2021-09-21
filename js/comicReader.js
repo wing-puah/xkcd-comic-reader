@@ -281,7 +281,10 @@ function initControlQueryAndPopulate(initialQuery) {
     }
 
     comicItem.innerText = 'End';
-    nextButton.disabled = true;
+
+    for (el of nextButton) {
+      el.disabled = true;
+    }
   }
 
   function removeImageNodeFromIndex(index, container) {
